@@ -1,5 +1,19 @@
 {
-
+    "name": "leshko/la-skeleton",
+    "type": "framework",
+    "description": "Simple framework",
+    "keywords": ["php","dic","framework"],
+    "homepage": "https://github.com/andriyleahko/laskeleton",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andriy Leshko",
+            "email": "andriyleshko@gmail.com",
+            "homepage": "https://github.com/andriyleahko/laskeleton",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.0",
         "leshko/la-framework": "dev-master",
