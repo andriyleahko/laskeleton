@@ -1,9 +1,10 @@
 <?php
 return [
 
-    'onKeyEvent' => [
-        'component' => 'componentName',
-        'method' => 'methodName'
+
+    'onDoThis' => [
+        'component' => 'myComponent',
+        'method' => 'process'
     ]
 
 ];
