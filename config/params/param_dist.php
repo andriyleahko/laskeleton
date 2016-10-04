@@ -16,6 +16,8 @@ return [
     'filecachePath' => 'cache',
     'templatePath' => 'template/',
     'baseTmpl' => 'main',
+    'customValidationClasses' => include_once 'config/validate/validate.php',
+    'customClearClasses' => include_once 'config/validate/clear.php',
 
     
 ];
