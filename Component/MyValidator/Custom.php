@@ -19,7 +19,7 @@ class Custom implements IValid {
      */
     public function validate($var, $key, $option = null) {
         
-        if (isset($var)) {
+        if (!isset($var)) {
             return ['success' => false, 'error' => 'error message'];
         }
         
