@@ -18,6 +18,14 @@ return [
     'baseTmpl' => 'main',
     'customValidationClasses' => include_once 'config/validate/validate.php',
     'customClearClasses' => include_once 'config/validate/clear.php',
+    'passCrypt' => 'myPassCrypt',
+    'authHandler' => 'myAuthHandler',
+    'authUserAdapter' => 'userDataAdapter',
+    'userTable' => 'User\User',
+    'userData' => include_once 'config/users/user.php',
+    'firewallRule' => include_once 'config/firewall/rule.php'
+    
+    
 
     
 ];
