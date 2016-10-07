@@ -36,7 +36,7 @@ try {
     exit;
     
 } catch (\Exception $ex) {
-    echo $ex->getMessage();
+    dump($ex);
 }
 
 
