@@ -20,10 +20,9 @@ return [
     'customClearClasses' => include_once 'config/validate/clear.php',
     'passCrypt' => 'myPassCrypt',
     'authHandler' => 'myAuthHandler',
-    'authUserAdapter' => 'userDataAdapter',
+    'authUserAdapter' => 'userDataAdapter', #userDbAdapter
     'userTable' => 'User\\\User',
     'userData' => include_once 'config/users/user.php',
-    'firewallRule' => include_once 'config/firewall/rule.php'
     
     
 

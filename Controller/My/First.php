@@ -21,7 +21,34 @@ class First extends BaseController {
      * @param string $c
      */
     public function index($a, $b, $c) {
+      
+        /**
+         * for create user
+         *
+        $user = new User();
+        $user->setUsername('andriy@leshko.com');
+        $user->setCity('lviv');
+        $user->setPass($this->container->get('myPassCrypt')->crypt('123456'));
+        $user->setRoles(['Superadmin']);
         
+        $this->container->get('doctrine')->getEntityManager()->persist($user);
+        $this->container->get('doctrine')->getEntityManager()->flush();
+        
+        $user = new User();
+        $user->setUsername('vasa@vasa.com');
+        $user->setCity('kyiv');
+        $user->setPass($this->container->get('myPassCrypt')->crypt('1234567'));
+        $user->setRoles(['User']);
+        
+        
+        $this->container->get('doctrine')->getEntityManager()->persist($user);
+        $this->container->get('doctrine')->getEntityManager()->flush();
+         * 
+         */
+        
+        /**
+         * example validation
+         *
         $this->validation = $this->container->get('validation');
         
         $this->validation->setVars([
@@ -49,7 +76,13 @@ class First extends BaseController {
         
         dump($this->validation->getErrors());
         dump($this->validation->getVars());
+         * 
+         */
         
+        /**
+         * create and find product
+         *
+         
         $product = new Product();
         $product->setName('222');
         $this->container->get('doctrine')->getEntityManager()->persist($product);
@@ -57,9 +90,14 @@ class First extends BaseController {
         
         $productRepository = $this->container->get('doctrine')->getEntityManager()->getRepository('Product\Product');
         $products = $productRepository->findAll();
+         * 
+         */
         
+        /**
+         * display data
+         */
         $data = [
-            'product' => $products,
+            'product' => 'assa',
             'asda' => 'asdasda'
         ];
         
@@ -67,7 +105,13 @@ class First extends BaseController {
         
         $this->response->setHtmlResponse($this->view->render('test'));
         
-        //$this->response->setJsonResponse($data);
+        /**
+         * json example
+         *
+        $this->response->setJsonResponse($data);
+         * 
+         */
+        
         
         
     }

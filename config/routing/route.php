@@ -7,15 +7,14 @@
             'method' => 'index',
             'params' => 'a/b/c',
             'role' => [
-                'denied' => [],
-                'allow' => ['*']
+                'denied' => ['User'],
+                'allow' => ['Anonim']
             ]
         ],
         'root' => [
             'url' => '/',
             'controller' => '\Controller\Root',
             'method' => 'index',
-            'role' => ['Anonim']
         ]
     ];
 
