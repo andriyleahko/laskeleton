@@ -5,6 +5,7 @@ require_once __DIR__.'/vendor/autoload.php';
 
 use Symfony\Component\Debug\Debug;
 use LAFramework\Container\Container;
+use LAFramework\Exceptions\LAException;
 
 Debug::enable();
 
@@ -32,12 +33,13 @@ try {
     
     $container = Container::init();
     $container->get('processor')->resolve();
-    $container->get('response')->getResponse();
-    exit;
     
 } catch (\Exception $ex) {
-    dump($ex);
+    new LAException($ex);
 }
+
+$container->get('response')->getResponse();
+
 
 
 

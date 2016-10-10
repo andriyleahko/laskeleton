@@ -23,6 +23,10 @@ return [
     'authUserAdapter' => 'userDataAdapter', #userDbAdapter
     'userTable' => 'User\\\User',
     'userData' => include_once 'config/users/user.php',
+    'tpl404' => '404',
+    'tpl403' => '403',
+    'customErr' => 'error'
+    
     
     
 
