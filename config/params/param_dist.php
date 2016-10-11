@@ -1,6 +1,6 @@
 <?php
 return [
-    'dbenable' => true, 
+    'dbenable' => false, 
     'dbhost' => 'localhost',
     'dbuser' => 'root',
     'dbpass' => 'root',

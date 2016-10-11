@@ -7,8 +7,8 @@
             'method' => 'index',
             'params' => 'a/b/c',
             'role' => [
-                'denied' => ['User'],
-                'allow' => ['Anonim']
+                'denied' => ['Anonim'],
+                'allow' => []
             ]
         ],
         'root' => [
