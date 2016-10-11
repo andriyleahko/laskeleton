@@ -3,26 +3,39 @@
 namespace Component;
 
 use LAFramework\Auth\IAuthHandler;
-use LAFramework\Container\Container;
+use LAFramework\View\View;
+use LAFramework\HttpFoundation\Response;
 
 class MyAuthHandler implements IAuthHandler{
     
     /**
      *
-     * @var LAFramework\Container\Container 
+     * @var View 
      */
-    private $container;
+    private $view;
     
     
     /**
-     * @todo set object in constructor as DI
+     *
+     * @var Response 
      */
-    public function __construct() {
-        $this->container = Container::init();
+    private $response;
+    
+    
+    /**
+     * 
+     * @param View $view
+     * @param Response $response
+     */
+    public function __construct(View $view, Response $response) {
+        $this->response = $response;
+        $this->view = $view;
     }
 
     public function onSuccess() {
-        
+        /**
+         * our realization
+         */  
     }
     
     /**
@@ -30,10 +43,15 @@ class MyAuthHandler implements IAuthHandler{
      * @param string $message
      */
     public function onFail($message){
-        
+        /**
+         * our realization
+         */ 
     }
     
     public function onUserIsAuth(){
+        /**
+         * our realization
+         */ 
         
     }
     

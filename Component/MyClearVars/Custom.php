@@ -16,6 +16,10 @@ class Custom implements IClear {
      */
     public function clear($var) {
         
+        /**
+         * our realization
+         */  
+        
         return $var;
         
     }

@@ -13,6 +13,9 @@ class PassCrypt implements IPassCrypt{
      * @return string
      */
     public function crypt($pass) {
+        /**
+         * our realization
+         */  
         return $pass;
     }
     

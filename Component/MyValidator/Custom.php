@@ -18,7 +18,9 @@ class Custom implements IValid {
      * @return array
      */
     public function validate($var, $key, $option = null) {
-        
+        /**
+         * our realization
+         */  
         if (!isset($var)) {
             return ['success' => false, 'error' => 'error message'];
         }
