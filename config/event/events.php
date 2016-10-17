@@ -1,8 +1,8 @@
 <?php
 return [
 
-
-    'onDoThis' => [
+    [
+        'key' => 'onDoThis',
         'component' => 'myComponent',
         'method' => 'process'
     ]
