@@ -17,10 +17,8 @@ class First extends BaseController {
     /**
      * 
      * @param string $a
-     * @param string $b
-     * @param string $c
      */
-    public function index($a, $b, $c) {
+    public function index($a) {
       
         /**
          * for create user
