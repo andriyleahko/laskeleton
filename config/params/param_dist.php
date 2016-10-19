@@ -1,20 +1,20 @@
 <?php
 return [
     'dbenable' => false, 
-    'dbhost' => 'localhost',
-    'dbuser' => 'root',
-    'dbpass' => 'root',
-    'dbname' => 'la',
-    'dbdriver' => 'pdo_mysql',
+    # 'dbhost' => 'localhost',
+    # 'dbuser' => 'root',
+    # 'dbpass' => 'root',
+    # 'dbname' => 'la',
+    # 'dbdriver' => 'pdo_mysql',
     #event lists
     'events' => include_once 'config/event/events.php',
     # driver select one of them. For redisCache and memCache must be installed servers
     'cachedriver' => 'fileCache', #redisCache, memCache
-    'memcacheHost' => '127.0.0.1',
-    'memcachePort' => '11211',
-    'redisHost' => '127.0.0.1',
-    'redisPort' => '6379',
-    'redisPass' => 'foobared',
+    # 'memcacheHost' => '127.0.0.1',
+    # 'memcachePort' => '11211',
+    # 'redisHost' => '127.0.0.1',
+    # 'redisPort' => '6379',
+    # 'redisPass' => 'foobared',
     # path to cache dir 
     'filecachePath' => 'cache',
     # path to folder with template
