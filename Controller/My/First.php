@@ -3,6 +3,7 @@
 namespace Controller\My;
 use Controller\BaseController;
 use Product\Product;
+use User\User;
 
 /**
  * @example
