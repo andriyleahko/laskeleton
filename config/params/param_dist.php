@@ -40,7 +40,8 @@ return [
     # tpl for 403 error
     'tpl403' => '403',
     # tpl for custom error
-    'customErr' => 'error'
+    'customErr' => 'error',
+    'salt' => 'fr44!!%^090==--rl4iiui873gjb==^$#ewr/*++++'
     
     
     
