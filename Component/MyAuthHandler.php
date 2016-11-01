@@ -33,9 +33,8 @@ class MyAuthHandler implements IAuthHandler{
     }
 
     public function onSuccess() {
-        /**
-         * our realization
-         */  
+        
+        return $this->response->setRedirectResponse($this->route->genereUrl('profile'));
     }
     
     /**
@@ -43,15 +42,17 @@ class MyAuthHandler implements IAuthHandler{
      * @param string $message
      */
     public function onFail($message){
-        /**
-         * our realization
-         */ 
+        
+        $this->view->assignVars([
+            'error' => $message
+        ]);
+        
+        return $this->response->setHtmlResponse($this->view->render('modules/profile/profile/index'));
     }
     
     public function onUserIsAuth(){
-        /**
-         * our realization
-         */ 
+        
+        return $this->response->setRedirectResponse($this->route->genereUrl('profile'));
         
     }
     

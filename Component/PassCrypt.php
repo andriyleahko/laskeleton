@@ -16,7 +16,7 @@ class PassCrypt implements IPassCrypt{
         /**
          * our realization
          */  
-        return $pass;
+        return md5($pass);
     }
     
     

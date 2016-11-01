@@ -1,1 +1,0 @@
-<?php dump($data) ?>
