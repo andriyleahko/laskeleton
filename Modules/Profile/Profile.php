@@ -15,7 +15,7 @@ class Profile extends BaseController {
      */
     public function index() {
         
-        if (!$this->container->get('auth')->isAuth) {
+        if (!$this->container->get('auth')->isAuth()) {
             $this->notAuthException();
         }
         

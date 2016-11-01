@@ -19,7 +19,7 @@ class Register extends BaseController {
         /**
          * if auth
          */
-        if ($this->container->get('auth')->isAuth) {
+        if ($this->container->get('auth')->isAuth()) {
             return $this->response->setRedirectResponse($this->route->genereUrl('profile'));
         }
         
@@ -30,7 +30,7 @@ class Register extends BaseController {
              */
             $validation = $this->container->get('validation');
             
-            $validation>setVars($this->request->getPost());
+            $validation->setVars($this->request->getPost());
             
             $validation->setRule([
                 'username' => ['length' => ['min' => 3, 'max' => 100], 'notEmpty', 'email'],

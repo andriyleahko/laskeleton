@@ -18,7 +18,7 @@ class Auth extends BaseController {
         /**
          * if auth
          */
-        if ($this->container->get('auth')->isAuth) {
+        if ($this->container->get('auth')->isAuth()) {
             return $this->response->setRedirectResponse($this->route->genereUrl('profile'));
         }
         
@@ -35,6 +35,12 @@ class Auth extends BaseController {
             '_csrf' => $this->container->get('session')->getCSRF()
         ]);
         
+        if ($error = $this->container->get('session')->getFlush('error')) {
+            $this->view->assignVars([
+                'error' => $error
+            ]);
+        }
+        
         return $this->response->setHtmlResponse($this->view->render('modules/profile/auth/login'));
  
     }
@@ -48,7 +54,7 @@ class Auth extends BaseController {
         /**
          * if not auth
          */
-        if (!$this->container->get('auth')->isAuth) {
+        if (!$this->container->get('auth')->isAuth()) {
             $this->notAuthException();
         }
         

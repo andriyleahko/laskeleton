@@ -20,6 +20,11 @@ class MyAuthHandler implements IAuthHandler{
      * @var Response 
      */
     private $response;
+    /**
+     *
+     * @var \LAFramework\Container\Container 
+     */
+    private $container;
     
     
     /**
@@ -30,11 +35,12 @@ class MyAuthHandler implements IAuthHandler{
     public function __construct(View $view, Response $response) {
         $this->response = $response;
         $this->view = $view;
+        $this->container = \LAFramework\Container\Container::init();
     }
 
     public function onSuccess() {
         
-        return $this->response->setRedirectResponse($this->route->genereUrl('profile'));
+        return $this->response->setRedirectResponse($this->container->get('route')->genereUrl('profile'));
     }
     
     /**
@@ -43,16 +49,18 @@ class MyAuthHandler implements IAuthHandler{
      */
     public function onFail($message){
         
-        $this->view->assignVars([
-            'error' => $message
-        ]);
         
-        return $this->response->setHtmlResponse($this->view->render('modules/profile/profile/index'));
+        
+        $session = $this->container->get('session');
+        
+        $session->setFlush('error',$message);
+        
+        return $this->response->setRedirectResponse($this->container->get('route')->genereUrl('login'));
     }
     
     public function onUserIsAuth(){
         
-        return $this->response->setRedirectResponse($this->route->genereUrl('profile'));
+        return $this->response->setRedirectResponse($this->container->get('route')->genereUrl('profile'));
         
     }
     

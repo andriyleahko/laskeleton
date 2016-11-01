@@ -16,9 +16,9 @@ class User
     /** @Column(type="string") **/
     protected $pass;
     /** @Column(type="string") **/
-    protected $city;
+    protected $city = '';
     /** @Column(type="array") **/
-    protected $roles;
+    protected $roles = [];
     
     public function getId()
     {
