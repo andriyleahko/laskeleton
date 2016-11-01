@@ -5,6 +5,7 @@ namespace Component;
 use LAFramework\Auth\IAuthHandler;
 use LAFramework\View\View;
 use LAFramework\HttpFoundation\Response;
+use LAFramework\Container\Container ;
 
 class MyAuthHandler implements IAuthHandler{
     
@@ -22,7 +23,7 @@ class MyAuthHandler implements IAuthHandler{
     private $response;
     /**
      *
-     * @var \LAFramework\Container\Container 
+     * @var Container 
      */
     private $container;
     
@@ -35,7 +36,7 @@ class MyAuthHandler implements IAuthHandler{
     public function __construct(View $view, Response $response) {
         $this->response = $response;
         $this->view = $view;
-        $this->container = \LAFramework\Container\Container::init();
+        $this->container = Container::init();
     }
 
     public function onSuccess() {
@@ -48,9 +49,7 @@ class MyAuthHandler implements IAuthHandler{
      * @param string $message
      */
     public function onFail($message){
-        
-        
-        
+
         $session = $this->container->get('session');
         
         $session->setFlush('error',$message);

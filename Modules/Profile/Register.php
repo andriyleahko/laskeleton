@@ -33,7 +33,7 @@ class Register extends BaseController {
             $validation->setVars($this->request->getPost());
             
             $validation->setRule([
-                'username' => ['length' => ['min' => 3, 'max' => 100], 'notEmpty', 'email'],
+                'username' => ['length' => ['min' => 3, 'max' => 100], 'notEmpty', 'email', 'userEmailExists'],
                 'pass' => ['length' => ['min' => 3, 'max' => 100], 'notEmpty'],
                 '_csrf' => ['csrf','notEmpty']
             ]);
