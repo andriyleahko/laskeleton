@@ -6,6 +6,10 @@ return [
     # 'dbpass' => 'root',
     # 'dbname' => 'la',
     # 'dbdriver' => 'pdo_mysql',
+    # type entity for doctrine
+    # 'typeEntityMap' => 'annotation', #xml, yml
+    # entity folder
+    # 'entityDir' => 'Entity',
     #event lists
     'events' => include_once 'config/event/events.php',
     # driver select one of them. For redisCache and memCache must be installed servers
@@ -41,7 +45,8 @@ return [
     'tpl403' => '403',
     # tpl for custom error
     'customErr' => 'error',
-    'salt' => 'fr44!!%^090==--rl4iiui873gjb==^$#ewr/*++++'
+    'salt' => 'fr44!!%^090==--rl4iiui873gjb==^$#ewr/*++++',
+    
     
     
     
