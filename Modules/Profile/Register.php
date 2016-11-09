@@ -16,6 +16,8 @@ class Register extends BaseController {
      */
     public function register() { 
         
+        $this->view->setTitle('Register');
+        
         /**
          * if auth
          */

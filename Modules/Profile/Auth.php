@@ -15,6 +15,8 @@ class Auth extends BaseController {
      */
     public function login() {
         
+        $this->view->setTitle('Login');
+        
         /**
          * if auth
          */
