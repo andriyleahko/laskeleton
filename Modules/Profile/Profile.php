@@ -20,7 +20,8 @@ class Profile extends BaseController {
         }
         
         $this->view->assignVars([
-            'user' => $this->container->get('auth')->getAuthUser()
+            
+            'user' => $this->doctrine->getEntityManager()->getRepository('User\User')->findOneBy(['username' => $this->container->get('auth')->getAuthUser()['username']])
         ]);
         
         return $this->response->setHtmlResponse($this->view->render('modules/profile/profile/index'));

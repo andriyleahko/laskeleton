@@ -13,6 +13,10 @@ class User {
 
     /** @Column(type="string") * */
     protected $username;
+    /** @Column(type="string", nullable=true) * */
+    protected $firstname;
+    /** @Column(type="string", nullable=true) * */
+    protected $lastname;
 
     /** @Column(type="string") * */
     protected $pass;
@@ -36,6 +40,20 @@ class User {
 
     public function setUsername($username) {
         $this->username = $username;
+    }
+    public function getFirstName() {
+        return $this->firstname;
+    }
+
+    public function setFirstName($firstname) {
+        $this->firstname = $firstname;
+    }
+    public function getLastName() {
+        return $this->lastname;
+    }
+
+    public function setLastName($lastname) {
+        $this->lastname = $lastname;
     }
 
     public function getPass() {

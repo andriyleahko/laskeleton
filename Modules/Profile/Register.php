@@ -34,6 +34,8 @@ class Register extends BaseController {
             
             $validation->setRule([
                 'username' => ['length' => ['min' => 3, 'max' => 100], 'notEmpty', 'email', 'userEmailExists'],
+                'firstname' => ['length' => ['min' => 3, 'max' => 100], 'notEmpty'],
+                'lastname' => ['length' => ['min' => 3, 'max' => 100], 'notEmpty'],
                 'pass' => ['length' => ['min' => 3, 'max' => 100], 'notEmpty'],
                 '_csrf' => ['csrf','notEmpty']
             ]);
@@ -41,6 +43,8 @@ class Register extends BaseController {
             $validation->clearRule([
                 'username' => ['basic'],
                 'pass' => ['basic'],
+                'firstname' => ['basic'],
+                'lastname' => ['basic'],
             ]);
             
             $validation->validate();
@@ -53,7 +57,8 @@ class Register extends BaseController {
                 $user = new User();
                 $user->setPass($this->container->get('myPassCrypt')->crypt($validation->getVar('pass')));
                 $user->setUsername($validation->getVar('username'));
-                
+                $user->setFirstName($validation->getVar('firstname'));
+                $user->setLastName($validation->getVar('lastname'));
                 $this->doctrine->getEntityManager()->persist($user);
                 $this->doctrine->getEntityManager()->flush();
                 

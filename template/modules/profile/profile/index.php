@@ -1,1 +1,1 @@
-Hello <?php echo $user['username'] ?><br/>
+Hello <?php echo $user->getFirstName() . ' ' . $user->getLastName() ?>
