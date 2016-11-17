@@ -67,11 +67,7 @@ class Register extends BaseController {
                 /**
                  * autologin
                  */
-                $this->container->get('session')->setData('user', [
-                    'username' => $user->getUsername(),
-                    'pass' => $user->getPass(),
-                    'userObject' => $user
-                ]);
+                $this->container->get('session')->setData('user', $user);
                 
                 /**
                  * redirect to profile
