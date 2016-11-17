@@ -34,11 +34,9 @@ return [
     # class for working with auth event
     'authHandler' => 'myAuthHandler',
     # adapter for user container
-    'authUserAdapter' => 'userDataAdapter', #userDbAdapter
-    # entity class for user table
-    'userTable' => 'User\\\User',
-    # user list when authUserAdapter is userDataAdapter
-    'userData' => include_once 'config/users/user.php',
+    'authUserAdapter' => 'userDbAdapter',
+    # entity class for user
+    'userModel' => 'User\\\User',
     # tpl for 404 error
     'tpl404' => '404',
     # tpl for 403 error

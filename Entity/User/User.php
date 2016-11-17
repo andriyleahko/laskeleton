@@ -2,11 +2,14 @@
 
 namespace User;
 
+use LAFramework\Auth\Model\IUser;
+
 /**
  * example entity
  * @Entity @Table(name="users")
  * */
-class User {
+class User implements IUser {
+
 
     /** @Id @Column(type="integer") @GeneratedValue * */
     protected $id;
