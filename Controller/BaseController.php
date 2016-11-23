@@ -43,7 +43,7 @@ class BaseController {
     
     /**
      *
-     * @var \HttpFoundation\Response 
+     * @var \LAFramework\HttpFoundation\Response 
      */
     public $response;
     
